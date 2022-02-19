@@ -1,0 +1,16 @@
+{% extends 'mysite/base.html'  %}
+
+{% block title %}
+New task
+{% endblock %}
+
+{% block content %}
+    <h1>Register new user</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

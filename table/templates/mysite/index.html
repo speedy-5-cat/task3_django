@@ -1,0 +1,31 @@
+{% extends 'mysite/base.html' %}
+
+{% block title %}
+Table of users
+{% endblock %}
+
+{% block content %}
+    <h1>Users</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr colspan="2">
+                <th>ID</th>
+                <th>username</th>
+                <th>e-mail</th>
+                <th>user created</th>
+                <th>last login</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for el in users %}
+                <tr>
+                    <td>{{ el.id }}</td>
+                    <td>{{ el.username }}</td>
+                    <td>{{ el.email }}</td>
+                    <td>{{ el.date_joined }}</td>
+                    <td>{{ el.last_login }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
